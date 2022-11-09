@@ -21,4 +21,15 @@ Ideas:
 Juegos de referencia: (Counter-Strike 1.6 Modo de juego: Zombie Escape, Counter-Strike CSGO Modo de juego: Zombie Escape)
 
 Imágenes de referencia:
-image image image
+
+![image](https://user-images.githubusercontent.com/108006771/200960041-6fbe860c-ad28-4df3-8468-4aa50166ca54.png)
+
+![image](https://user-images.githubusercontent.com/108006771/200960068-e9b7e1dc-5e13-4856-b87c-32b381189527.png)
+
+![image](https://user-images.githubusercontent.com/108006771/200960093-b2dec4a1-c6f7-4dbf-abd9-4ddca6e52589.png)
+
+![image](https://user-images.githubusercontent.com/108006771/200960105-931bd0f5-c916-48a1-9803-bb4e66c83d8a.png)
+
+
+
+
