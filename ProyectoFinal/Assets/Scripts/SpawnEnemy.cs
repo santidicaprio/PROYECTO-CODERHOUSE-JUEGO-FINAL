@@ -7,6 +7,7 @@ public class SpawnEnemy : MonoBehaviour
     [SerializeField] Transform spawnPosition;
     [SerializeField] GameObject prefabEnemy;
     [SerializeField] Vector3 randomPosition;
+     
 
     private float counter = 1;
     private float counterTwo = 1;

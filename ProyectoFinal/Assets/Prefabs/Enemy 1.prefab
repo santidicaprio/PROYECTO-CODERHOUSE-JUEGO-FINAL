@@ -360,7 +360,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 8627012ee61498846b4535a3928e338c, type: 2}
+  - {fileID: 2100000, guid: 1118e093cb0d98b489607ecd333e132b, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -392,8 +392,8 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
-  m_Radius: 0.5
-  m_Height: 2
+  m_Radius: 0.9
+  m_Height: 2.21
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &4388507650228022195
@@ -412,6 +412,11 @@ MonoBehaviour:
   speed: 0
   player: {fileID: 0}
   agent: {fileID: -217185978018735392}
+  enemyHealth: 100
+  deadEnemy: {fileID: 1834194341294532, guid: d5f26854a8904624c8073139cd2eb346, type: 3}
+  killSound: {fileID: 0}
+  finishSound: {fileID: 8300000, guid: 05d0536a3eefc80438f95f9662331f52, type: 3}
+  deadEnemyBlood: {fileID: 1000010675638318, guid: a3768c8a9d1b90d4bb0eb0e4bdbe730c, type: 3}
 --- !u!195 &-217185978018735392
 NavMeshAgent:
   m_ObjectHideFlags: 0

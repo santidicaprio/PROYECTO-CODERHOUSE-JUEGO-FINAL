@@ -10,9 +10,14 @@ public class EnemyFollow : MonoBehaviour
     [SerializeField] public float speed = 2f;
     [SerializeField] GameObject player;          
     [SerializeField] NavMeshAgent agent;
-    
-    
-    private float _health = 500;
+    [SerializeField] float enemyHealth = 100f;
+    [SerializeField] GameObject deadEnemy;
+    [SerializeField] AudioSource killSound;
+    [SerializeField] AudioClip finishSound;
+    [SerializeField] GameObject deadEnemyBlood;
+
+
+    private float _health = 100000;
 
     void Start()
     {
@@ -29,6 +34,7 @@ public class EnemyFollow : MonoBehaviour
         CheckDistance();
         SetDestination();
         LookAtQuaternion();
+        
     }
     void LookAtPlayer()
     {
@@ -40,9 +46,10 @@ public class EnemyFollow : MonoBehaviour
         if (dist < 2)
         {
             _health -= 1;
-            Debug.Log(_health);
+            
             if (_health == 0)
             {
+                
                 Destroy(player);
                 Debug.Log("You died, the zombies ate you");
             }
@@ -53,9 +60,9 @@ public class EnemyFollow : MonoBehaviour
         float dist = Vector3.Distance(posPlayer.position, transform.position);
         if (dist < 10)
         {
-            Debug.Log("10 metros distancia");
+            
             Distance();
-            agent.speed = 5f;
+            
             
         }
         
@@ -72,5 +79,24 @@ public class EnemyFollow : MonoBehaviour
     {
         Quaternion rot = Quaternion.LookRotation(posPlayer.position - transform.position);
         transform.rotation = rot;
+    }
+    public void GetDamage(int damage)
+    {
+        enemyHealth -= damage;
+        Debug.Log(enemyHealth);
+        
+
+        if (enemyHealth <= 0)
+        {
+            
+            Instantiate(deadEnemyBlood, gameObject.transform.position, gameObject.transform.rotation);
+            Instantiate(deadEnemy, gameObject.transform.position, gameObject.transform.rotation);
+            Destroy(deadEnemy, 0.7f);
+            Destroy(deadEnemyBlood, 0.5f);
+            Destroy(gameObject);
+            
+         
+            
+        }
     }
 }

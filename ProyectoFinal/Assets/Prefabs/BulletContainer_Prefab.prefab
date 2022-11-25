@@ -203,6 +203,10 @@ MonoBehaviour:
   bulllllet: {fileID: 1219777913974737463}
   killSound: {fileID: -7161205831050581262}
   finishSound: {fileID: 8300000, guid: 05d0536a3eefc80438f95f9662331f52, type: 3}
+  damage: 10
+  range: 1000
+  bloodEffect: {fileID: 1000012909287652, guid: abb9f519b142e304d9c45b56afa768bc, type: 3}
+  characterPos: {fileID: 0}
 --- !u!65 &5635905836468508401
 BoxCollider:
   m_ObjectHideFlags: 0

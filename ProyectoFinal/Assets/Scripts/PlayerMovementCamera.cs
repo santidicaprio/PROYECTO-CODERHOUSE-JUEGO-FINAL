@@ -9,12 +9,14 @@ public class PlayerMovementCamera : MonoBehaviour
     [SerializeField] Animator anim;
     [SerializeField] float jumpForce;
     [SerializeField] Rigidbody rb;
+    [SerializeField] float range = 5f;
+
     
 
     private float _horizontalMove;
     private float _verticalMove;
     private Rigidbody _rigidbody;
-    private bool _canJump = true;
+    private bool _canJump = false;
 
 
     void Start()
@@ -26,12 +28,12 @@ public class PlayerMovementCamera : MonoBehaviour
 
     void Update()
     {
-        
-
-        if (Input.GetKeyDown(KeyCode.Space) && _canJump == true)
-        {
-            Jump();
-        }
+        JumpTwo();
+        //&& _canJump == true)
+      //  if (Input.GetKeyDown(KeyCode.Space)) 
+       // {
+           // Jump();
+       // }
     }
     void FixedUpdate()
     {
@@ -76,6 +78,18 @@ public class PlayerMovementCamera : MonoBehaviour
         if (col.transform.gameObject.layer == 11)
         {
             _canJump = false;
+        }
+    }
+
+    private void JumpTwo()
+    {
+        RaycastHit hit;
+        if (Physics.Raycast(transform.position, -Vector3.forward, out hit, range))
+        {
+            if (Input.GetKey(KeyCode.Space) && _canJump == true)
+            {
+                Jump();
+            }            
         }
     }
 }

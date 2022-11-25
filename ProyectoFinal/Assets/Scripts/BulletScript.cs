@@ -9,6 +9,10 @@ public class BulletScript : MonoBehaviour
     [SerializeField] GameObject bulllllet;
     [SerializeField] AudioSource killSound;
     [SerializeField] AudioClip finishSound;
+    [SerializeField] int damage = 10;
+    
+    
+
 
 
     void Start()
@@ -29,10 +33,23 @@ public class BulletScript : MonoBehaviour
     {
         if (col.gameObject.tag == "Enemies")
         {
+            Debug.Log("Pego al enemigo");
+
+            
+            col.gameObject.GetComponent<EnemyFollow>().GetDamage(damage);
+            
+
+
             killSound.PlayOneShot(finishSound, 0.8f);
-            Destroy(col.gameObject);
+            
             Destroy(gameObject);
+            
+            
+                          
+                                   
         }
+        
+        
 
     }   
 }
